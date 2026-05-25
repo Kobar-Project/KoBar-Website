@@ -1,5 +1,7 @@
 # KoBar Website
 
+# [KoBar.org](https://kobar.org/)
+
 A modern and sleek web project built with React and Tailwind CSS.
 
 This is the website repository for the [KoBar Project](https://github.com/Kobar-Project/KoBar).
