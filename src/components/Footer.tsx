@@ -11,7 +11,7 @@ export default function Footer() {
           <a className="text-on-surface-variant hover:text-primary transition-colors font-mono text-[11px] uppercase tracking-widest font-bold" href="https://www.reddit.com/r/kobarproject/" target="_blank" rel="noreferrer">Reddit</a>
           <a className="text-on-surface-variant hover:text-primary transition-colors font-mono text-[11px] uppercase tracking-widest font-bold" href="https://x.com/kobarproject" target="_blank" rel="noreferrer">X</a>
           <a className="text-on-surface-variant hover:text-primary transition-colors font-mono text-[11px] uppercase tracking-widest font-bold" href="https://github.com/Kobar-Project/KoBar">GitHub</a>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-mono text-[11px] lowercase tracking-widest font-bold" href="mailto:contact@ko48.com">contact@ko48.com</a>
+          <a className="text-on-surface-variant hover:text-primary transition-colors font-mono text-[11px] lowercase tracking-widest font-bold" href="mailto:hello@kobar.org">hello@kobar.org</a>
         </div>
 
         <div className="font-medium text-on-surface-variant/70 text-sm">
