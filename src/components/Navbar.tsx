@@ -23,8 +23,7 @@ export default function Navbar() {
             rel="noreferrer"
           >
             <Github size={18} />
-            <span className="hidden sm:inline">GitHub</span>
-            <span className="sm:hidden">GitHub</span>
+            GitHub
           </a>
         </div>
       </div>

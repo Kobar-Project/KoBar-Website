@@ -130,3 +130,21 @@ body {
         opacity: 1 !important;
     }
 }
+
+/* Mobile: disable heavy ambient animation for performance */
+@media (max-width: 767px) {
+    .ambient-bg {
+        animation: none;
+        opacity: 0.8;
+    }
+}
+
+/* Touch devices: disable hover-only transforms */
+@media (hover: none) {
+    .feature-card:hover {
+        transform: none;
+    }
+    .glass-panel:hover .img-zoom {
+        transform: none;
+    }
+}

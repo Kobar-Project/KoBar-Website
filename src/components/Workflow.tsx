@@ -42,8 +42,8 @@ export default function Workflow() {
   }, [selectedImg]);
 
   return (
-    <section className="max-w-6xl mx-auto mb-32 px-4" id="workflow">
-      <Reveal className="text-center mb-16">
+    <section className="max-w-6xl mx-auto mb-16 md:mb-32 px-4" id="workflow">
+      <Reveal className="text-center mb-10 md:mb-16">
         <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4">
           Experience the Workflow
         </h3>
@@ -52,7 +52,7 @@ export default function Workflow() {
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
         {IMAGES.map((img) => (
           <Reveal key={img.id} delay={img.delay} className={`feature-card glass-panel p-3 rounded-[2.5rem] overflow-hidden shadow-2xl glow-effect cursor-pointer ${img.classes}`} >
             <div onClick={() => setSelectedImg(img.src)} className="w-full h-full block">
@@ -81,7 +81,7 @@ export default function Workflow() {
             >
               <button
                 onClick={() => setSelectedImg(null)}
-                className="fixed top-4 right-4 md:top-8 md:right-8 z-[101] bg-surface/50 hover:bg-surface text-white p-2 rounded-full backdrop-blur-md transition-colors border border-white/10"
+                className="fixed top-4 right-4 md:top-8 md:right-8 z-[101] bg-surface/50 hover:bg-surface text-white p-3 rounded-full backdrop-blur-md transition-colors border border-white/10 min-w-[44px] min-h-[44px] flex items-center justify-center"
               >
                 <X size={28} />
               </button>

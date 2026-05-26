@@ -15,7 +15,7 @@ export default function App() {
       
       <Navbar />
       
-      <main className="flex-grow pt-36 pb-16 px-4 md:px-6">
+      <main className="flex-grow pt-24 md:pt-36 pb-10 md:pb-16 px-4 md:px-6">
         <Hero />
         <Features />
         <Workflow />
