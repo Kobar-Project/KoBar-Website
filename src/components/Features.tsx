@@ -1,81 +1,106 @@
-import { ClipboardList, Bot, FileText, MonitorPlay, Hammer, Wrench } from 'lucide-react';
+import { Sidebar, ClipboardList, FileText, Bot, Camera, Music, Calendar, Timer, Wrench } from 'lucide-react';
 import { Reveal } from './Reveal';
+
+const featuresData = [
+  {
+    id: 'modular-sidebar',
+    title: 'Modular Sidebar',
+    desc: 'Always-on-top transparent overlay with edge docking, mini mode, and multi-monitor support.',
+    icon: Sidebar,
+    span: 'md:col-span-2 md:row-span-2'
+  },
+  {
+    id: 'ai-hub',
+    title: 'AI Hub',
+    desc: 'Multi-provider support (OpenAI, Gemini, Claude, Local), streaming, and file context.',
+    icon: Bot,
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    id: 'sequential-clipboard',
+    title: 'Sequential Clipboard',
+    desc: 'Multi-slot FIFO queue, copy/paste modes with image support, and quick reset capability.',
+    icon: ClipboardList,
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    id: 'screenshot-studio',
+    title: 'Screenshot Studio',
+    desc: 'Region/Full-screen capture, Konva.js annotation editor, and multi-display support.',
+    icon: Camera,
+    span: 'md:col-span-2 md:row-span-1'
+  },
+  {
+    id: 'rich-notes',
+    title: 'Rich Notes Panel',
+    desc: 'Tiptap-powered editor with multi-tabs, voice-to-text, password lock, and color categories.',
+    icon: FileText,
+    span: 'md:col-span-1 md:row-span-2'
+  },
+  {
+    id: 'koplayer',
+    title: 'KoPlayer (Media)',
+    desc: 'System media integration, album art display, and full transport controls.',
+    icon: Music,
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    id: 'kocalendar',
+    title: 'KoCalendar',
+    desc: 'Google Calendar integration, event alerts, and visual monthly calendar view.',
+    icon: Calendar,
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    id: 'focus-mode',
+    title: 'Focus Mode',
+    desc: 'Customizable timer, ambient melodies, loop mode, and desktop notifications.',
+    icon: Timer,
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    id: 'more-tools',
+    title: 'More Tools',
+    desc: 'Calculator, Color Picker, To-Do List, Pin Injector, KoBox, Snippet Vault, and App Launcher.',
+    icon: Wrench,
+    span: 'md:col-span-2 md:row-span-1'
+  }
+];
 
 export default function Features() {
   return (
-    <section className="max-w-6xl mx-auto mb-16 md:mb-32" id="features">
-      <Reveal>
-        <h3 className="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-          Your Creative Toolbox
+    <section className="w-full max-w-7xl mx-auto mb-24 md:mb-40 px-4 md:px-8" id="features">
+      <Reveal className="max-w-3xl mb-16">
+        <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-on-surface leading-[1.1]">
+          Everything you need,<br />
+          <span className="text-on-surface-variant">nothing you don't.</span>
         </h3>
+        <p className="text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed">
+          A suite of modular tools designed to keep you in the flow without cluttering your workspace.
+        </p>
       </Reveal>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-6 auto-rows-auto md:auto-rows-[280px]">
-        {/* Card 1 */}
-        <Reveal className="feature-card sm:col-span-2 md:col-span-2 glass-panel p-5 md:p-8 rounded-2xl md:rounded-3xl group flex flex-col justify-between h-full">
-          <div>
-            <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform shadow-inner shadow-primary/30">
-              <ClipboardList size={28} />
-            </div>
-            <h4 className="text-xl font-bold mb-3 text-on-surface">Sequential Clipboard</h4>
-            <p className="text-base font-medium text-on-surface-variant opacity-90">Multi-slot FIFO queue for intelligent copying and pasting workflows. Keep your ideas flowing without losing track.</p>
-          </div>
-        </Reveal>
-
-        {/* Card 2 */}
-        <Reveal delay={0.1} className="feature-card md:col-span-1 glass-panel p-5 md:p-8 rounded-2xl md:rounded-3xl group flex flex-col justify-between h-full">
-          <div>
-            <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform shadow-inner shadow-secondary/30">
-              <Bot size={28} />
-            </div>
-            <h4 className="text-xl font-bold mb-3 text-on-surface">AI Hub</h4>
-            <p className="text-base font-medium text-on-surface-variant opacity-90">Chat with OpenAI, Gemini, Claude, or local LLMs directly from your sidebar.</p>
-          </div>
-        </Reveal>
-
-        {/* Card 3 */}
-        <Reveal delay={0.2} className="feature-card md:col-span-1 glass-panel p-5 md:p-8 rounded-2xl md:rounded-3xl group flex flex-col justify-between h-full">
-          <div>
-            <div className="w-14 h-14 rounded-2xl bg-tertiary/20 flex items-center justify-center mb-6 text-tertiary group-hover:scale-110 transition-transform shadow-inner shadow-tertiary/30">
-              <FileText size={28} />
-            </div>
-            <h4 className="text-xl font-bold mb-3 text-on-surface">Rich Notes</h4>
-            <p className="text-base font-medium text-on-surface-variant opacity-90">Tiptap-powered multi-tab note editor for quick thoughts and drafts.</p>
-          </div>
-        </Reveal>
-
-        {/* Card 4 */}
-        <Reveal className="feature-card md:col-span-1 glass-panel p-5 md:p-8 rounded-2xl md:rounded-3xl group flex flex-col justify-between h-full">
-          <div>
-            <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform shadow-inner shadow-primary/30">
-              <MonitorPlay size={28} />
-            </div>
-            <h4 className="text-xl font-bold mb-3 text-on-surface">Screenshot Studio</h4>
-            <p className="text-base font-medium text-on-surface-variant opacity-90">Capture, annotate, and copy instantly without breaking your flow.</p>
-          </div>
-        </Reveal>
-
-        {/* Card 5 */}
-        <Reveal delay={0.1} className="feature-card sm:col-span-2 md:col-span-2 glass-panel p-5 md:p-8 rounded-2xl md:rounded-3xl group flex flex-col justify-between bg-gradient-to-br from-surface-container-high/50 to-primary/5 h-full">
-          <div>
-            <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform shadow-inner shadow-secondary/30">
-              <Hammer size={28} />
-            </div>
-            <h4 className="text-xl font-bold mb-3 text-on-surface">Productivity Arsenal</h4>
-            <p className="text-base font-medium text-on-surface-variant opacity-90">To-Do List, Snippet Vault, Focus Mode, and Calculator built right in. Everything you need to stay in the zone.</p>
-          </div>
-        </Reveal>
-
-        {/* Card 6 */}
-        <Reveal delay={0.2} className="feature-card md:col-span-1 glass-panel p-5 md:p-8 rounded-2xl md:rounded-3xl group flex flex-col justify-between h-full">
-          <div>
-            <div className="w-14 h-14 rounded-2xl bg-tertiary/20 flex items-center justify-center mb-6 text-tertiary group-hover:scale-110 transition-transform shadow-inner shadow-tertiary/30">
-              <Wrench size={28} />
-            </div>
-            <h4 className="text-xl font-bold mb-3 text-on-surface">Utilities</h4>
-            <p className="text-base font-medium text-on-surface-variant opacity-90">Color Picker, KoPlayer, Pin to Top, and KoBox dropzone.</p>
-          </div>
-        </Reveal>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]">
+        {featuresData.map((feature, index) => {
+          const Icon = feature.icon;
+          return (
+            <Reveal 
+              key={feature.id} 
+              delay={index * 0.05} 
+              className={`glass-panel group p-6 md:p-8 rounded-[2rem] flex flex-col justify-between ${feature.span}`}
+            >
+              <div className="mb-4">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-high/50 border border-white/5 flex items-center justify-center mb-6 transition-colors group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/20">
+                  <Icon size={24} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h4 className="text-xl md:text-2xl font-bold mb-3 text-on-surface tracking-tight">{feature.title}</h4>
+                <p className="text-base text-on-surface-variant leading-relaxed">
+                  {feature.desc}
+                </p>
+              </div>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
