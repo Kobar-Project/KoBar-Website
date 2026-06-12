@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Quicksand", sans-serif;
+  --font-sans: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
   --color-primary: #f59e0b;
-  --color-secondary: #fbbf24;
-  --color-tertiary: #fcd34d;
+  --color-secondary: #f59e0b;
+  --color-tertiary: #d97706;
   
-  --color-surface: #1c1917;
-  --color-surface-container: #292524;
-  --color-surface-container-high: #292524;
-  --color-surface-container-lowest: #0c0a09;
+  --color-surface: #18181b; /* Zinc 900 */
+  --color-surface-container: #27272a; /* Zinc 800 */
+  --color-surface-container-high: #3f3f46; /* Zinc 700 */
+  --color-surface-container-lowest: #09090b; /* Zinc 950 */
   
-  --color-on-surface: #f5f5f4;
-  --color-on-surface-variant: #d6d3d1;
-  --color-on-primary: #1c1917;
-  --color-background: #1c1917;
+  --color-on-surface: #fafafa;
+  --color-on-surface-variant: #a1a1aa; /* Zinc 400 */
+  --color-on-primary: #18181b;
+  --color-background: #09090b; /* Zinc 950 */
 }
 
 body {
@@ -25,126 +25,58 @@ body {
     color: var(--color-on-surface);
     position: relative;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    text-wrap: pretty;
 }
 
-/* Ambient Background Motion */
+/* Subtler Ambient Background */
 .ambient-bg {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: -2;
     background-image: 
-        radial-gradient(circle at 20% 40%, rgba(245, 158, 11, 0.08), transparent 40%),
-        radial-gradient(circle at 80% 60%, rgba(251, 191, 36, 0.08), transparent 40%);
+        radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.03), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03), transparent 30%);
     background-attachment: fixed;
-    animation: breathe 15s ease-in-out infinite alternate;
 }
 
-@keyframes breathe {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.1); opacity: 1; }
-}
-
-/* Glassmorphism & Cards */
+/* Premium Glassmorphism */
 .glass-panel {
-    background: rgba(41, 37, 36, 0.5);
-    backdrop-filter: blur(32px);
-    border: 1px solid rgba(245, 158, 11, 0.15);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02),
-                0 8px 32px -8px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glass-panel:hover {
-    border-color: rgba(245, 158, 11, 0.4);
+    background: rgba(24, 24, 27, 0.6); /* Zinc 900 at 60% */
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+                0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                border-color 0.4s ease, background 0.4s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(245, 158, 11, 0.5);
-    box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.3),
-                0 20px 40px -10px rgba(245, 158, 11, 0.2);
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(39, 39, 42, 0.4); /* Zinc 800 */
 }
 
-/* Glow Effects */
-.glow-effect {
-    position: relative;
-}
-.glow-effect::before {
-    content: '';
-    position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    background: linear-gradient(45deg, #f59e0b, #fbbf24, #f59e0b);
-    z-index: -1;
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    filter: blur(12px);
-}
-.glow-effect:hover::before {
-    opacity: 0.8;
-}
-
-/* Floating Animations */
-.float-anim {
-    animation: floating 6s ease-in-out infinite;
-}
-@keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Button Shimmers */
-.btn-shimmer {
+/* Tactical Hover States for Interactive Elements */
+.btn-premium {
     position: relative;
     overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
-.btn-shimmer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-20deg);
-    transition: 0.5s;
-}
-.btn-shimmer:hover::after {
-    left: 150%;
-    transition: 0.7s ease-in-out;
+
+.btn-premium:active {
+    transform: scale(0.98) translateY(1px);
 }
 
 .img-zoom {
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .glass-panel:hover .img-zoom {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .ambient-bg, .float-anim, .btn-shimmer::after, .img-zoom, .feature-card {
-        animation: none !important;
+    .btn-premium, .img-zoom, .feature-card {
         transition: none !important;
         transform: none !important;
-        opacity: 1 !important;
-    }
-}
-
-/* Mobile: disable heavy ambient animation for performance */
-@media (max-width: 767px) {
-    .ambient-bg {
-        animation: none;
-        opacity: 0.8;
-    }
-}
-
-/* Touch devices: disable hover-only transforms */
-@media (hover: none) {
-    .feature-card:hover {
-        transform: none;
-    }
-    .glass-panel:hover .img-zoom {
-        transform: none;
     }
 }
