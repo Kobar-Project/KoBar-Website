@@ -1,0 +1,290 @@
+[
+  {
+    "folder": "aiHub",
+    "id": "com.kobar.aihub",
+    "name": "AI Hub",
+    "description": "A versatile, multi-model AI assistant integrated directly into KoBar. Supports multiple providers (Anthropic, OpenAI, Gemini) and Local LLMs.",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/AI-Hub-plugin",
+    "icon": "smart_toy",
+    "categories": [
+      "Utility",
+      "Productivity",
+      "AI"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "es",
+      "fr",
+      "ru",
+      "ar",
+      "zh",
+      "ja",
+      "hi"
+    ]
+  },
+  {
+    "folder": "ClipboardManager",
+    "id": "com.kobar.clipboardmanager",
+    "name": "Clipboard Manager",
+    "description": "Sequential multi-slot clipboard manager for KoBar. Stores your copied items in visual slots and pastes them in order.",
+    "version": "1.0.6",
+    "repo": "Kobar-Project/Clipboard-Manager-plugin",
+    "icon": "content_paste",
+    "categories": [
+      "Productivity",
+      "Utility"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "fr",
+      "es",
+      "ja",
+      "ru",
+      "ar",
+      "zh",
+      "hi"
+    ]
+  },
+  {
+    "folder": "screenshot",
+    "id": "screenshot-studio-overlay",
+    "name": "Screenshot Studio",
+    "description": "Native multi-monitor screenshot capture, annotation, and cropping tool for KoBar.",
+    "version": "1.1.1",
+    "repo": "Kobar-Project/Screenshot-plugin",
+    "icon": "screenshot_region",
+    "categories": [
+      "Productivity",
+      "Utility"
+    ],
+    "languages": []
+  },
+  {
+    "folder": "colorPicker",
+    "id": "kobar-colorpicker-plugin",
+    "name": "Color Picker",
+    "description": "Pick colors with HEX/RGB/HSV/HSL values, and generate harmonies.",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/Color-Picker-plugin",
+    "icon": "palette",
+    "categories": [
+      "Utility",
+      "Design"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "es",
+      "fr",
+      "ru",
+      "ar",
+      "zh",
+      "ja",
+      "hi"
+    ]
+  },
+  {
+    "folder": "snippetVault",
+    "id": "snippetvault-plugin",
+    "name": "Snippet Vault",
+    "description": "Securely store, categorize, and encrypt your frequently used code blocks and text snippets.",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/SnippetVault-plugin",
+    "icon": "library_books",
+    "categories": [
+      "Productivity",
+      "Utility"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "es",
+      "fr",
+      "ru",
+      "ar",
+      "zh",
+      "ja",
+      "hi"
+    ]
+  },
+  {
+    "folder": "koBox",
+    "id": "com.kobar.kobox",
+    "name": "KoBox (Dropzone)",
+    "description": "An accessible, temporary file dropzone right on your sidebar. Drag files or folders in to move them into KoBox, click to open.",
+    "version": "1.0.4",
+    "repo": "Kobar-Project/KoBox-plugin",
+    "icon": "inventory_2",
+    "categories": [
+      "Utility",
+      "Productivity"
+    ],
+    "languages": [
+      "en",
+      "tr"
+    ]
+  },
+  {
+    "folder": "Shortcuts",
+    "id": "kobar.shortcuts",
+    "name": "Shortcuts",
+    "description": "Standalone shortcuts manager plugin",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/Shortcuts-plugin",
+    "icon": "apps",
+    "categories": [
+      "Utility"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "ar",
+      "zh",
+      "fr",
+      "hi",
+      "es",
+      "ja",
+      "ru"
+    ]
+  },
+  {
+    "folder": "pinWindowToTop",
+    "id": "pin-window-to-top",
+    "name": "Pin Window to Top",
+    "description": "Allows you to pin third-party windows to always stay on top within the KoBar interface.",
+    "version": "1.0.3",
+    "repo": "Kobar-Project/PinWindowToTop-plugin",
+    "icon": "push_pin",
+    "categories": [
+      "Utility"
+    ],
+    "languages": [
+      "en"
+    ]
+  },
+  {
+    "folder": "koPlayer",
+    "id": "koplayer-plugin",
+    "name": "koPlayer",
+    "description": "A lightweight, floating media player to control your music and videos. Enjoy seamless media playback integration while working.",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/KoPlayer-plugin",
+    "icon": "music_note",
+    "categories": [
+      "Utility"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "es",
+      "fr",
+      "ru",
+      "ar",
+      "zh",
+      "ja",
+      "hi"
+    ]
+  },
+  {
+    "folder": "focusMode",
+    "id": "focus-mode-plugin",
+    "name": "Focus Mode",
+    "description": "Pomodoro-style focus timer to boost your productivity. (Plugin Edition)",
+    "version": "1.0.4",
+    "repo": "Kobar-Project/Focus-Mode-plugin",
+    "icon": "hourglass_empty",
+    "categories": [
+      "Utility",
+      "Productivity"
+    ],
+    "languages": [
+      "de",
+      "ar",
+      "zh",
+      "fr",
+      "hi",
+      "en",
+      "es",
+      "ja",
+      "ru",
+      "tr"
+    ]
+  },
+  {
+    "folder": "toDoList",
+    "id": "todolist-plugin",
+    "name": "To-Do List",
+    "description": "A minimal, draggable to-do list widget stored sequentially to prioritize your tasks.",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/ToDoList-plugin",
+    "icon": "format_list_bulleted",
+    "categories": [
+      "Productivity",
+      "Utility"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de"
+    ]
+  },
+  {
+    "folder": "koCalender",
+    "id": "ko-calender-plugin",
+    "name": "KoCalendar",
+    "description": "An interactive, draggable calendar popup integrated natively into KoBar.",
+    "version": "1.1.0",
+    "repo": "Kobar-Project/KoCalendar-plugin",
+    "icon": "calendar_month",
+    "categories": [
+      "Productivity",
+      "Utility"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "es",
+      "fr",
+      "ru",
+      "ar",
+      "zh",
+      "ja",
+      "hi"
+    ]
+  },
+  {
+    "folder": "calculator",
+    "id": "com.kobar.calculator.plugin",
+    "name": "Calculator",
+    "description": "A fully-featured scientific calculator and real-time currency converter plugin.",
+    "version": "1.0.2",
+    "repo": "Kobar-Project/calculator-plugin",
+    "icon": "calculate",
+    "categories": [
+      "Utility",
+      "Productivity"
+    ],
+    "languages": [
+      "en",
+      "tr",
+      "de",
+      "es",
+      "fr",
+      "ru",
+      "ar",
+      "zh",
+      "ja",
+      "hi"
+    ]
+  }
+]
