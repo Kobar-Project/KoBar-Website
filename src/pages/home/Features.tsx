@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Icon } from '../../components/Icon';
 import KoBarHead from '../../components/KoBarHead';
 import Picture from '../../components/Picture';
+import Screen from '../../components/Screen';
 import { Container, cx, Eyebrow } from '../../components/ui';
 import type { SymbolName } from '../../data/icons';
 
@@ -46,19 +47,6 @@ function Facts({ items }: { items: { icon: SymbolName; text: ReactNode }[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-/** A dark slice of a screen for screenshots to sit on. */
-function Screen({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <div className={cx('relative overflow-hidden rounded-2xl bg-[#131316] ring-1 ring-line', className)}>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(70%_60%_at_80%_100%,rgb(22_45_92/0.6),transparent_75%)]"
-      />
-      <div className="relative h-full">{children}</div>
-    </div>
   );
 }
 
