@@ -1,0 +1,237 @@
+{
+  "trailer-poster": {
+    "alpha": false,
+    "height": 1080,
+    "width": 1920,
+    "widths": [
+      640,
+      960,
+      1280,
+      1920
+    ]
+  },
+  "ui/bar-horizontal": {
+    "alpha": true,
+    "height": 252,
+    "width": 1350,
+    "widths": [
+      480,
+      675,
+      1350
+    ]
+  },
+  "ui/bar-vertical": {
+    "alpha": true,
+    "height": 1362,
+    "width": 252,
+    "widths": [
+      126,
+      252
+    ]
+  },
+  "ui/mini-head": {
+    "alpha": true,
+    "height": 198,
+    "width": 198,
+    "widths": [
+      99,
+      198
+    ]
+  },
+  "ui/mini-head-hover": {
+    "alpha": true,
+    "height": 198,
+    "width": 198,
+    "widths": [
+      99,
+      198
+    ]
+  },
+  "ui/note-panel": {
+    "alpha": true,
+    "height": 1376,
+    "width": 1868,
+    "widths": [
+      480,
+      934,
+      1868
+    ]
+  },
+  "ui/notes-workspaces": {
+    "alpha": true,
+    "height": 1376,
+    "width": 2194,
+    "widths": [
+      480,
+      1097,
+      2194
+    ]
+  },
+  "ui/plugin-ai-hub": {
+    "alpha": true,
+    "height": 1384,
+    "width": 1460,
+    "widths": [
+      480,
+      730,
+      1460
+    ]
+  },
+  "ui/plugin-calculator": {
+    "alpha": true,
+    "height": 2158,
+    "width": 980,
+    "widths": [
+      490,
+      980
+    ]
+  },
+  "ui/plugin-clipboard-manager": {
+    "alpha": true,
+    "height": 1346,
+    "width": 762,
+    "widths": [
+      381,
+      762
+    ]
+  },
+  "ui/plugin-color-picker": {
+    "alpha": true,
+    "height": 1608,
+    "width": 900,
+    "widths": [
+      450,
+      900
+    ]
+  },
+  "ui/plugin-color-picker-palettes": {
+    "alpha": true,
+    "height": 1346,
+    "width": 900,
+    "widths": [
+      450,
+      900
+    ]
+  },
+  "ui/plugin-focus-mode": {
+    "alpha": true,
+    "height": 1466,
+    "width": 800,
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "ui/plugin-focus-mode-bar": {
+    "alpha": true,
+    "height": 1346,
+    "width": 236,
+    "widths": [
+      118,
+      236
+    ]
+  },
+  "ui/plugin-focus-mode-setup": {
+    "alpha": true,
+    "height": 1466,
+    "width": 800,
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "ui/plugin-kobox": {
+    "alpha": true,
+    "height": 1682,
+    "width": 572,
+    "widths": [
+      286,
+      572
+    ]
+  },
+  "ui/plugin-kocalendar": {
+    "alpha": true,
+    "height": 1704,
+    "width": 1140,
+    "widths": [
+      570,
+      1140
+    ]
+  },
+  "ui/plugin-koplayer": {
+    "alpha": true,
+    "height": 1346,
+    "width": 836,
+    "widths": [
+      418,
+      836
+    ]
+  },
+  "ui/plugin-screenshot-studio": {
+    "alpha": false,
+    "height": 1740,
+    "width": 2200,
+    "widths": [
+      480,
+      1100,
+      2200
+    ]
+  },
+  "ui/plugin-shortcuts": {
+    "alpha": true,
+    "height": 1346,
+    "width": 838,
+    "widths": [
+      419,
+      838
+    ]
+  },
+  "ui/plugin-snippet-vault": {
+    "alpha": true,
+    "height": 1346,
+    "width": 900,
+    "widths": [
+      450,
+      900
+    ]
+  },
+  "ui/plugin-store": {
+    "alpha": false,
+    "height": 1202,
+    "width": 1808,
+    "widths": [
+      480,
+      904,
+      1808
+    ]
+  },
+  "ui/plugin-todo": {
+    "alpha": true,
+    "height": 1346,
+    "width": 900,
+    "widths": [
+      450,
+      900
+    ]
+  },
+  "ui/plugins-window": {
+    "alpha": false,
+    "height": 1202,
+    "width": 1808,
+    "widths": [
+      480,
+      904,
+      1808
+    ]
+  },
+  "ui/settings-appearance": {
+    "alpha": false,
+    "height": 1202,
+    "width": 1808,
+    "widths": [
+      480,
+      904,
+      1808
+    ]
+  }
+}
