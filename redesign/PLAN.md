@@ -74,7 +74,7 @@ Dal: `redesign-2026` (origin/main'den). Durum: **onay bekliyor**.
 ├──────────────────────────────────────────────────────────────┤    │
 │ 13 plugin ikon ızgarası → /plugins#slug                      │    │
 │ 3 öne çıkan: AI Hub · Clipboard Manager · Screenshot Studio  │    │
-│ Everything stays on your device (gizlilik özeti)             │    │
+│ No account. No telemetry. No KoBar server. (gizlilik özeti)  │    │
 │ Open source (MIT) · topluluk · destek                        │    │
 │ Download: Store vs GitHub installer + SSS                    │    │
 │ Footer                                                       │    │
@@ -112,13 +112,13 @@ Mobil (390): bar gizli; hero metni → CTA'lar → görsel; bölümler tek sütu
 | Bölüm | Kaynak |
 |---|---|
 | Hero başlığı, bölüm başlıkları | `remaster/store/screenshots/captions.txt` + Store karelerindeki başlıklar |
-| Hero alt metni, "What is KoBar" | `KoBar/README.md` "What is KoBar", onboarding metni (`en.json` → `onboardingBarBody`: "Everything stays on your device") |
+| Hero alt metni, "What is KoBar" | `KoBar/README.md` "What is KoBar", onboarding metinleri (`en.json` → `onboardingWelcomeBody`, `onboardingPackBody`) |
 | Bar özellikleri (kenar, yön, mini mod, yoğunluk 3 seçenek, tema, vurgu, saydamlık, 10 dil, yedek, çalışma alanı) | `listing-facts.md` §3, §4, §7; ayar adları `en.json` (`settingsDensity*`, `settingsAccent*`, `settingsEdge*`) |
 | Notlar (liste + editör, .txt/.md içe aktarma, Ctrl+S, "Open with KoBar") | `listing-facts.md` §3, `CHANGELOG.md` 1.4.3 |
 | Plugin adları, açıklamaları, GitHub linkleri, kategori, ikon | `KoBar Plugins/<klasör>/manifest.json` (`name`, `description`, `githubRepo`, `categories`, `icon`); Screenshot Studio'da `githubRepo` yok → `KoBar/README.md` tablosundaki `Kobar-Project/Screenshot-plugin` |
 | Plugin ayrıntı maddeleri (4-20 slot, PNG, Geri Dönüşüm Kutusu, parola + AES, AI sağlayıcıları) | `listing-facts.md` §6 |
 | Plugin güvenliği, plugin geliştirme | `listing-facts.md` §3 (onay, "unverified"), `KoBar/README.md` "Plugin development" |
-| Gizlilik politikası | Koddan doğrulama (ağ istekleri, DPAPI/safeStorage, telemetri yokluğu; arka planda denetim sürüyor) + `CHANGELOG.md` 1.4.0 Security, `README.md` |
+| Gizlilik politikası | §5a'daki koddan doğrulanmış tablo + `CHANGELOG.md` 1.4.0 Security, `README.md` |
 | Lisans | `KoBar/LICENSE.md` (MIT, © 2026 eedali), plugin `LICENSE.txt` dosyaları |
 | Görseller | `remaster/store/screenshots/ui/dark/*` (yalnız koyu), `KoBar-Logo/store/trailer-thumb-1920x1080.png` (trailer kapağı), `KoBar-Logo/store/store-bg-dark.png` (hero zemini) |
 | Logo, favicon, OG | `KoBar-Logo/svg/*`, `KoBar-Logo/web/*` (favicon.ico/svg, apple-touch, 192/512/maskable, `site.webmanifest`, `og-image.png` 1200×630, `Assets/Logo/24_pixel.png` + `512_pixel.png`) |
@@ -126,6 +126,25 @@ Mobil (390): bar gizli; hero metni → CTA'lar → görsel; bölümler tek sütu
 | İndirme linkleri | `ms-windows-store://pdp/?productid=9P2KPFF3G9L9`, `https://apps.microsoft.com/detail/9P2KPFF3G9L9`, `https://github.com/Kobar-Project/KoBar/releases/latest` |
 | Sürüm | Çalışma anında `api.github.com/repos/Kobar-Project/KoBar/releases/latest` (bugün `v1.4.3`); başarısızsa hiç gösterilmez |
 | Topluluk ve destek linkleri | mevcut `Footer.tsx`, `Hero.tsx`; `KoBar/src/config/links.ts` (Patreon, Open Collective, hello@kobar.org) |
+
+## 5a. Gizlilik: koddan doğrulanan gerçekler (2026-10-18)
+
+KB = `KoBar v2\KoBar`, PL = `KoBar Plugins`. Ana oturumda dosya:satır ile tekrar kontrol edildi.
+
+| Konu | Gerçek | Kanıt |
+|---|---|---|
+| KoBar sunucusu / telemetri | **Yok.** Analitik, çökme raporu, KoBar'a ait veri alan uç nokta yok; kobar.org yalnızca dış link | KB `package.json`, `src/config/links.ts` |
+| **AI Hub API anahtarları** | **DPAPI ile saklanmıyor.** Eklenti anahtarları zustand `persist` ile `localStorage`'da (`kobar-aihub-plugin-storage`) düz metin tutuyor; host bunu `userData\kobar-data` altındaki dosyaya yansıtıyor. Host'taki DPAPI `SecretService` var ama hiçbir resmi eklenti kullanmıyor. Anahtar yalnızca seçilen sağlayıcıya, başlıkta gidiyor; yerel model yalnızca loopback | PL `aiHub/usePluginChatStore.js:5-12,82`; KB `electron/main/services/llm.cts`, `lib/llmRequest.cts:50-58`; `services/secrets/secretService.cts` |
+| Snippet Vault parolası | İçerik AES ile şifreleniyor ama **parola aynı kayıtta düz metin** saklanıyor; kilit açma düz karşılaştırma. Gerçek koruma değil | PL `snippetVault/index.jsx:392-411,585,662,142` |
+| Yedek dışa aktarma | Sırlar varsayılan olarak maskeli; kullanıcı açarsa düz metin (uyarıyla) | KB `src/backup/redact.ts`, `CHANGELOG.md` 1.4.0 |
+| Pano | Yalnızca Clipboard Manager kopya modu açıkken izlenir; ağ isteği yok | KB `electron/main/services/clipboard.cts`, PL `ClipboardManager/index.jsx:87-104` |
+| Ekran görüntüleri, notlar | Yerelde; kullanıcının seçtiği yere kaydedilir | KB `services/screenshot.cts:283-340` |
+| Ses/mikrofon | Özellik yok; izin varsayılan olarak reddedilir | KB `electron/lib/permissions.cts` |
+| Otomatik güncelleme | Store sürümünde kapalı (güncellemeyi Store yapar); GitHub kurulumunda GitHub Releases | KB `electron/lib/buildFlags.cts`, `services/updater.cts` |
+| Üçüncü taraf istekleri | Plugin listesi ve kurulum: `raw.githubusercontent.com`, `api.github.com` (kullanıcı açınca). AI sağlayıcıları (sohbet edince). **Calculator açılınca `ipapi.co`'ya IP ile konum isteği** (para birimini önseçmek için) ve döviz kuru için `open.er-api.com`. Shortcuts'a eklenen web linkinin simgesi Google favicon servisinden. koPlayer/PiP: YouTube küçük resim, oEmbed ve gömülü oynatıcı. Not emoji seçici: jsDelivr CDN'den emoji görselleri | PL `calculator/index.tsx:336,396`, `Shortcuts/index.jsx:199`, `koPlayer/index.jsx:165-172`; KB `src/components/notes/NotePanel.tsx:11`, `PipPlayer.tsx:13` |
+| Google Calendar | Paketli sürümde kullanılamaz (OAuth istemci dosyası pakette yok); sitede anılmaz | KB `electron/lib/gcalConfig.cts`, `tools/builderConfig.cjs:126` |
+
+**Sonuç:** "Hiçbir veri KoBar sunucusuna gitmez" doğru ve yazılacak. "AI Hub anahtarları DPAPI ile saklanır" **yanlış**, yazılmayacak; yerine "anahtarlar cihazında, Windows kullanıcı profilindeki KoBar veri klasöründe saklanır ve yalnızca seçtiğin sağlayıcıya gönderilir" yazılacak. "Everything stays on your device" sloganı ana sayfada mutlak iddia olarak kullanılmayacak; "No account. No telemetry. No KoBar server." + üçüncü taraf istekleri `/privacy`'de açıkça listelenecek. Snippet Vault için "secure/encrypted" pazarlaması yapılmayacak.
 
 ## 6. Teknik kararlar
 
@@ -146,7 +165,7 @@ Mobil (390): bar gizli; hero metni → CTA'lar → görsel; bölümler tek sütu
 1. **Vercel temiz URL:** `/plugins` isteğinin `plugins/index.html`'e çözülmesi beklenir; dal push'undan sonra Vercel önizleme dağıtımı oluşursa orada doğrulanmalı. Sorun çıkarsa yalnız dosya yapısı değişir, deploy ayarı değil.
 2. **Store metniyle çelişki:** canlı Store listesi 1.1.0 metnini taşıyor; site doğru bilgiyi verdiğinde ikisi çelişecek. Store listesinin güncellenmesi ve gizlilik URL'sinin `https://kobar.org/privacy` yapılması senin işin (CHANGES.md'ye yazılacak).
 3. **Screenshot Studio deposunda lisans dosyası yok** (diğer 12 plugin MIT). Lisans sayfası depo bazında doğru bilgiyi verir; "tüm plugin'ler MIT" denmez.
-4. **Gizlilik iddiaları:** kodla doğrulanamayan hiçbir cümle yazılmaz; şüpheli kalan madde politika dışında bırakılıp CHANGES.md'de listelenir.
+4. **Gizlilik iddiaları:** kodla doğrulanamayan hiçbir cümle yazılmaz (bkz. §5a). AI Hub anahtarlarının DPAPI'ye taşınması ve Snippet Vault parolasının düz metin saklanması uygulama/eklenti tarafında düzeltilmesi gereken işler; site yalnızca bugünkü gerçeği anlatır. Düzeltme gelirse gizlilik sayfası tek paragrafla güncellenir.
 5. **Pin Window to Top** için UI kesiti yok; plugin sayfasında yalnız ikon + metin.
 6. **Hidrasyon uyuşmazlığı:** zamana/tarayıcıya bağlı her şey (sürüm, kafa) yalnız istemcide, mount sonrası çizilir.
 7. **Lighthouse mobil 90+:** LCP adayı hero görseli; AVIF, doğru `sizes`, preload ve sistem gövde fontu ile karşılanır. React çalışma zamanı (~60 KB gz) TBT'yi düşük tutar.
