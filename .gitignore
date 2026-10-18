@@ -7,3 +7,5 @@ coverage/
 .env*
 !.env.example
 .agents/*    
+scripts/__pycache__/
+redesign/lighthouse/*.json
