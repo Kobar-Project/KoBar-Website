@@ -1,6 +1,6 @@
 # kobar.org yeniden tasarım planı (2026)
 
-Dal: `redesign-2026` (origin/main'den). Durum: **onay bekliyor**.
+Dal: `redesign-2026` (origin/main'den). Durum: **onaylandı (A kompozisyonu), uygulandı**. Sonuçlar: [CHANGES.md](CHANGES.md).
 
 ## 0. İnceleme özeti
 
