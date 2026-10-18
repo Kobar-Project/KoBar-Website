@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* Outfit 700 (SIL OFL 1.1), self-hosted from @fontsource/outfit 5.3.0. Headings only; body text uses the system UI font,
+   the same one the KoBar app uses on Windows. */
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/outfit-latin-700-normal.woff2") format("woff2");
+}
+
+@theme {
+  --font-display: "Outfit", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Cascadia Mono", "Cascadia Code", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Brand: ink and cream from the logo package, amber is the KoBar app's default accent. Dark only. */
+  --color-ink: #18181b;
+  --color-ink-2: #1f1f23;
+  --color-ink-3: #27272a;
+  --color-ink-4: #323238;
+  --color-cream: #f4f1ea;
+  --color-fg: #d4d4d8;
+  --color-muted: #a1a1aa;
+  --color-accent: #f4a125;
+  --color-on-accent: #141414;
+  --color-navy: #14233c;
+  --color-line: rgb(244 241 234 / 0.08);
+  --color-line-strong: rgb(244 241 234 / 0.16);
+
+  --container-page: 70rem; /* 1120px */
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    background-color: var(--color-ink);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (min-width: 64rem) {
+    body {
+      font-size: 1.0625rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-cream);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* <picture> only chooses the source; let the <img> inside be the layout box. */
+  picture {
+    display: contents;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: rgb(244 161 37 / 0.35);
+    color: var(--color-cream);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer components {
+  /* Body copy link inside running text. */
+  .link {
+    color: var(--color-cream);
+    text-decoration: underline;
+    text-decoration-color: var(--color-line-strong);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 150ms;
+  }
+
+  .link:hover {
+    text-decoration-color: var(--color-accent);
+  }
+
+  /* The navy glow of the Store artwork, in the corner of a section. */
+  .glow {
+    background-image: radial-gradient(55% 60% at 88% 100%, rgb(22 45 92 / 0.55), transparent 70%);
+  }
+
+  .glow-left {
+    background-image: radial-gradient(50% 60% at 8% 0%, rgb(22 45 92 / 0.45), transparent 70%);
+  }
+}
